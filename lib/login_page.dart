@@ -1,3 +1,5 @@
+import 'package:aufa_app/signup_success_message.dart';
+import 'package:aufa_app/welcome_splash_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'signup_page.dart';
@@ -120,8 +122,11 @@ class InitState extends State<LoginPage>{
                       ),
                     ),
 
-                    GestureDetector(
+                  GestureDetector(
                       onTap: () => {
+                      Navigator.push(context, MaterialPageRoute(
+                      builder: (context) => WelcomeSplashScreen()
+                      ))
                         /*write your code here*/
                       },
                       child: Container(
