@@ -1,3 +1,4 @@
+import 'MyHomePage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'signup_page.dart';
@@ -13,10 +14,9 @@ class InitState extends State<LoginPage>{
     return initWidget();
   }
 
-
   Widget initWidget() {
     return Scaffold(
-      body: SingleChildScrollView(
+      body: Center(
         child: Column(
           children: [
             Container(
@@ -45,16 +45,16 @@ class InitState extends State<LoginPage>{
                       margin: EdgeInsets.only(top: 50),
                       alignment: Alignment.center,
                       child: Text(
-                        "Sign In Aufa's App",
+                        "Sign In AUFA's App",
                         style: TextStyle(
-                          fontSize: 25,
+                          fontSize: 20,
                           color: Colors.black87
                         ),
                       ),
                     ),
 
                     Container(
-                      margin: EdgeInsets.only(left: 20, right: 20, top: 35),
+                      margin: EdgeInsets.only(left: 50, right: 50, top: 35),
                       padding: EdgeInsets.only(left: 20, right: 20),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
@@ -73,6 +73,7 @@ class InitState extends State<LoginPage>{
                            color: Color(0xffd4233e),
                           ),
                           hintText: "Enter User ID",
+                          labelText: 'User ID:',
                           enabledBorder: InputBorder.none,
                           focusedBorder: InputBorder.none,
                         ),
@@ -80,7 +81,7 @@ class InitState extends State<LoginPage>{
                     ),
 
                     Container(
-                      margin: EdgeInsets.only(left: 20, right: 20, top: 35),
+                      margin: EdgeInsets.only(left: 50, right: 50, top: 30),
                       padding: EdgeInsets.only(left: 20, right: 20),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
@@ -104,6 +105,7 @@ class InitState extends State<LoginPage>{
                             color: Colors.black87,
                           ),
                           hintText: "Enter Password",
+                          labelText: 'Password:',
                           enabledBorder: InputBorder.none,
                           focusedBorder: InputBorder.none,
                         ),
@@ -111,24 +113,28 @@ class InitState extends State<LoginPage>{
                     ),
 
                     Container(
-                      margin: EdgeInsets.only(top: 20, right: 30),
+                      margin: EdgeInsets.only(top: 20, right: 20),
                       alignment: Alignment.centerRight,
                       child: GestureDetector(
-                        child: Text("Forget Password?"),
+                        child: Text("Forgot Password?"),
                         onTap: () => {
                         },
                       ),
                     ),
 
                     GestureDetector(
-                      onTap: () => {
-                        /*write your code here*/
-                      },
-                      child: Container(
-                        margin: EdgeInsets.only(left: 50, right: 50, top: 50),
-                        padding: EdgeInsets.only(left: 30, right: 30),
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => MyHomePage()),
+                          );
+                        },
+
+                        child: Container(
+                        margin: EdgeInsets.only(left: 120, right: 120, top: 20),
+                        padding: EdgeInsets.only(left: 20, right: 20),
                         alignment: Alignment.center,
-                        height: 54,
+                        height: 50,
                         decoration: BoxDecoration(
                           gradient: LinearGradient(
                             colors: [(new Color(0xffd4233e)), (new Color(0xffde3650))],
@@ -137,15 +143,11 @@ class InitState extends State<LoginPage>{
                           ),
                           borderRadius: BorderRadius.circular(10),
                           color: Colors.grey[200],
-                          boxShadow: [BoxShadow(
-                              offset: Offset(0,10),
-                              color: Color(0xffEEEEEE)
-                          )],
                         ),
                         child: Text(
                           "Sign In",
                           style: TextStyle(
-                            color: Colors.white
+                            color: Colors.white, fontSize: 15,
                           ),
                         ),
                       ),
@@ -156,7 +158,9 @@ class InitState extends State<LoginPage>{
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text("Dont Have Account?"),
+                          Text("Don't Have Account?", style: TextStyle(
+                            fontSize: 15,
+                          ),),
                           GestureDetector(
                             onTap: () => {
                               Navigator.push(context, MaterialPageRoute(
@@ -164,9 +168,9 @@ class InitState extends State<LoginPage>{
                               ))
                             },
                             child: Text(
-                              "Sign Up Now",
+                              "  Sign Up Now!",
                               style: TextStyle(
-                                color: Color(0xffd4233e)
+                                color: Color(0xffd4233e), fontSize: 15,
                               ),
                             ),
                           )
