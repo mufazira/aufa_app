@@ -2,6 +2,7 @@ import 'package:aufa_app/welcome_splash_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'signup_page.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SignUpSuccessMessage extends StatelessWidget {
   final String title, description, buttontext;

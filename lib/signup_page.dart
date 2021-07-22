@@ -1,6 +1,7 @@
 import 'package:aufa_app/login_page.dart';
 import 'package:flutter/material.dart';
 import 'signup_success_message.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SignUpPage extends StatefulWidget {
   @override
