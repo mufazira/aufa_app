@@ -42,7 +42,7 @@ class _DashboardState extends State<Dashboard> {
       bottomNavigationBar: BottomNavigationBar (
           items: [
             BottomNavigationBarItem(
-              icon: Icon(Icons.dashboard),
+              icon: Icon(Icons.dashboard_outlined),
               label: 'Dashboard',
             ),
             BottomNavigationBarItem(
