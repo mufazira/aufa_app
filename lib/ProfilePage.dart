@@ -1,4 +1,4 @@
-import 'package:aufa_app/ProfilePage.dart';
+import 'package:aufa_app/Dashboard.dart';
 import 'package:flutter/material.dart';
 
 int _selectedPageIndex = 0;
@@ -7,11 +7,11 @@ var _pages = [
   Dashboard(),
   ProfilePage(),
 ];
-class Dashboard extends StatefulWidget {
+class ProfilePage extends StatefulWidget {
   @override
-  _DashboardState createState() => _DashboardState();
+  _ProfilePageState createState() => _ProfilePageState();
 }
-class _DashboardState extends State<Dashboard> {
+class _ProfilePageState extends State<ProfilePage> {
 
   @override
   Widget build (BuildContext context) {
