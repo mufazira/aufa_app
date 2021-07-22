@@ -1,5 +1,6 @@
 import 'package:aufa_app/login_page.dart';
 import 'package:flutter/material.dart';
+import 'signup_success_message.dart';
 
 class SignUpPage extends StatefulWidget {
   @override
@@ -152,6 +153,10 @@ class InitState extends State<SignUpPage> {
 
             GestureDetector(
               onTap: () => {
+              showDialog(context: context, builder: (context) => SignUpSuccessMessage(
+              title: "Sign Up Successful !",
+              description: "Congratulations, your account have been successfully created."
+              ))
                 /*write your code here*/
               },
               child: Container(
