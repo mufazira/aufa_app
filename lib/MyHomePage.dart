@@ -16,23 +16,26 @@ class InitState extends State<MyHomePage>{
   }
 
 
-  int _selectedIndex = 0;
-  void _onItemTapped(int index) {
+  int _currentIndex = 0;
+  final list<Widget> _children =
+  [
+  Dashboard(), Icon(
+    Icons.dashboard,
+    size: 150,
+  ),
+  ProfilePage(), Icon(
+    Icons.person_outlined,
+    size: 150,
+  ),
+  ];
+
+  void onTappedBar(int index)
+  {
     setState(() {
-      _selectedIndex = index;
+      _currentIndex = index;
     });
   }
 
-  static const List<Widget> _pages = <Widget>[
-    Icon(
-      Icons.dashboard,
-      size: 150,
-    ),
-    Icon(
-      Icons.person_outlined,
-      size: 150,
-    ),
-  ];
   Widget initWidget() {
     return Scaffold(
       appBar: AppBar(
@@ -109,8 +112,7 @@ class InitState extends State<MyHomePage>{
         label: 'Profile',
       ),
     ],
-           currentIndex: _selectedIndex,
-           onTap: _onItemTapped,
+
          ),
 
     );
