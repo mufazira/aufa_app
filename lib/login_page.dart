@@ -1,3 +1,4 @@
+import 'package:aufa_app/login_unseccessful_message.dart';
 import 'package:aufa_app/signup_success_message.dart';
 import 'package:aufa_app/welcome_splash_screen.dart';
 import 'package:flutter/cupertino.dart';
@@ -128,7 +129,7 @@ class InitState extends State<LoginPage>{
                       Navigator.push(context, MaterialPageRoute(
                       builder: (context) => WelcomeSplashScreen()
                       ))
-                        /*write your code here*/
+                      /*showDialog(context: context, builder: (context) => LoginUnsuccessfulMessage()) // for unsuccessful login*/
                       },
                       child: Container(
                         margin: EdgeInsets.only(left: 50, right: 50, top: 50),
@@ -149,7 +150,7 @@ class InitState extends State<LoginPage>{
                           )],
                         ),
                         child: Text(
-                          "Sign In",
+                          "Log In",
                           style: TextStyle(
                             color: Colors.white
                           ),
