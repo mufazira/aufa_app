@@ -25,7 +25,7 @@ class _ProfilePageState extends State<ProfilePage> {
           ),
         ],
         // The title text which will be shown on the action bar
-        title: Text("DASHBOARD"),
+        title: Text("PROFILE"),
       ),
 
       body: new Container(
@@ -43,11 +43,11 @@ class _ProfilePageState extends State<ProfilePage> {
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.dashboard_outlined),
-            title: Text("Dashboard"),
+            label: 'Dashboard',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person_outline),
-            title: Text("Profile"),
+            label: 'Profile',
           ),
         ],
         currentIndex: _selectedPageIndex,

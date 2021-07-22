@@ -10,20 +10,20 @@ class MyHomePage extends StatefulWidget{
 }
 
 class InitState extends State<MyHomePage>{
+
+
   @override
   Widget build(BuildContext context) {
     return initWidget();
   }
 
-
-  int _selectedIndex = 0;
-  void _onItemTapped(int index) {
+void _onTabTapped(int index){
     setState(() {
-      _selectedIndex = index;
+      _selectedIndex = 0;
     });
-  }
-
-  static const List<Widget> _pages = <Widget>[
+}
+int _selectedIndex = 0;
+  final List<Widget> _pages = <Widget>[
     Icon(
       Icons.dashboard,
       size: 150,
@@ -33,6 +33,9 @@ class InitState extends State<MyHomePage>{
       size: 150,
     ),
   ];
+
+
+
   Widget initWidget() {
     return Scaffold(
       appBar: AppBar(
@@ -46,7 +49,7 @@ class InitState extends State<MyHomePage>{
         // The title text which will be shown on the action bar
         title: Text("AUFAs APP"),
       ),
-      body: Container(
+      body:  Container(
         width: double.infinity,
         height: double.infinity,
         decoration: BoxDecoration(
@@ -94,10 +97,12 @@ class InitState extends State<MyHomePage>{
           ],
         ),
       ),
+
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.pinkAccent,
         selectedFontSize: 20,
-        selectedIconTheme: IconThemeData(color: Colors.pink),
-        selectedItemColor: Colors.pink,
+        selectedIconTheme: IconThemeData(color: Colors.amberAccent),
+        selectedItemColor: Colors.amberAccent,
         selectedLabelStyle: TextStyle(fontWeight: FontWeight.bold),
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
@@ -110,12 +115,14 @@ class InitState extends State<MyHomePage>{
           ),
         ],
         currentIndex: _selectedIndex,
-        onTap: _onItemTapped,
+        onTap: _onTabTapped,
       ),
-
     );
   }
 }
+
+
+
 
 
 
