@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MyHomePage extends StatelessWidget {
   final String title;
@@ -25,8 +26,8 @@ class MyHomePage extends StatelessWidget {
           Padding(
               padding: EdgeInsets.all(20.0),
               child: new MaterialButton(
-                height: 100.0,
-                minWidth: 150.0,
+                height: ScreenUtil(). setHeight(100.0),
+                minWidth: ScreenUtil(). setWidth(150.0),
                 color: Theme.of(context).primaryColor,
                 textColor: Colors.white,
                 child: new Text("To-Do"),
@@ -34,8 +35,8 @@ class MyHomePage extends StatelessWidget {
           Padding(
               padding: EdgeInsets.all(20.0),
               child: new MaterialButton(
-                height: 100.0,
-                minWidth: 150.0,
+                height: ScreenUtil(). setHeight(100.0),
+                minWidth: ScreenUtil(). setWidth(150.0),
                 color: Theme.of(context).primaryColor,
                 textColor: Colors.white,
                 child: new Text("Done"),
