@@ -2,11 +2,17 @@ import 'package:aufa_app/ProfilePage.dart';
 import 'package:flutter/material.dart';
 
 int _selectedPageIndex = 0;
-
-var _pages = [
-  Dashboard(),
-  ProfilePage(),
+final List<Widget> _pages = <Widget>[
+  Icon(
+    Icons.dashboard_outlined,
+    size: 150,
+  ),
+  Icon(
+    Icons.person_outlined,
+    size: 150,
+  ),
 ];
+
 class Dashboard extends StatefulWidget {
   @override
   _DashboardState createState() => _DashboardState();

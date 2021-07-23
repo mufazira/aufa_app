@@ -2,6 +2,7 @@ import 'package:aufa_app/Dashboard.dart';
 import 'package:aufa_app/ProfilePage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:aufa_app/placeholder_widget.dart';
 
 
 class MyHomePage extends StatefulWidget{
@@ -19,19 +20,22 @@ class InitState extends State<MyHomePage>{
 
 void _onTabTapped(int index){
     setState(() {
-      _selectedIndex = 0;
+      _currentIndex = index;
     });
 }
-int _selectedIndex = 0;
+int _currentIndex = 0;
   final List<Widget> _pages = <Widget>[
     Icon(
-      Icons.dashboard,
+      Icons.dashboard_outlined,
       size: 150,
     ),
+
     Icon(
       Icons.person_outlined,
       size: 150,
     ),
+    PlaceholderWidget(Colors.purpleAccent),
+    PlaceholderWidget(Colors.blueAccent),
   ];
 
 
@@ -49,7 +53,8 @@ int _selectedIndex = 0;
         // The title text which will be shown on the action bar
         title: Text("AUFAs APP"),
       ),
-      body:  Container(
+      body: /* _children[_currentIndex], */
+       new Container(
         width: double.infinity,
         height: double.infinity,
         decoration: BoxDecoration(
@@ -96,9 +101,11 @@ int _selectedIndex = 0;
                 )),
           ],
         ),
-      ),
+       ),
 
       bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _currentIndex,
+        onTap: _onTabTapped,
         backgroundColor: Colors.pinkAccent,
         selectedFontSize: 20,
         selectedIconTheme: IconThemeData(color: Colors.amberAccent),
@@ -109,13 +116,12 @@ int _selectedIndex = 0;
             icon: Icon(Icons.dashboard_outlined),
             label: 'Dashboard',
           ),
+
           BottomNavigationBarItem(
             icon: Icon(Icons.person_outlined),
             label: 'Profile',
           ),
         ],
-        currentIndex: _selectedIndex,
-        onTap: _onTabTapped,
       ),
     );
   }

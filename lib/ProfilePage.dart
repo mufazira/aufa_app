@@ -1,4 +1,5 @@
 import 'package:aufa_app/Dashboard.dart';
+import 'package:aufa_app/ProfilePage.dart';
 import 'package:flutter/material.dart';
 
 int _selectedPageIndex = 0;
