@@ -64,17 +64,18 @@ int _currentIndex = 0;
             colors: [Color(0xFFF56194), Color(0xFFF35353)],
           ),
         ),
-        child: new Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Padding(
+          child: Row(
+           mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+            Expanded(
+            flex:2,
+            child: Padding(
                 padding: EdgeInsets.all(20.0),
                 child: new MaterialButton(
                   height: 50.0,
                   minWidth: 150.0,
                   color: Colors.deepOrange[400],
-                  textColor: Colors.white,
-                  child: new Text("To-Do"),
+                  child: new Text("To-Do", style: TextStyle(fontSize: 20.0, color: Colors.white),),
                   onPressed: () => {
                     Navigator.push(
                       context,
@@ -83,24 +84,35 @@ int _currentIndex = 0;
                   },
                   splashColor: Colors.redAccent,
                 )),
-            Padding(
-                padding: EdgeInsets.all(20.0),
-                child: new MaterialButton(
-                  height: 50.0,
-                  minWidth: 150.0,
-                  color: Colors.deepOrange[400],
-                  textColor: Colors.white,
-                  child: new Text("Done"),
-                  onPressed: () => {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => ProfilePage()),
-                    )
-                  },
-                  splashColor: Colors.redAccent,
-                )),
-          ],
         ),
+              Expanded(
+                  flex:2,
+                  child: Row(
+                    children: <Widget>[
+                      Expanded(
+                        flex: 2,
+                        child: Padding(
+                            padding: EdgeInsets.all(20.0),
+                            child: new MaterialButton(
+                              height: 50.0,
+                              minWidth: 150.0,
+                              color: Colors.deepOrange[400],
+                              child: new Text("Done", style: TextStyle(fontSize: 20.0, color: Colors.white),),
+                              onPressed: () => {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => ProfilePage()),
+                                )
+                              },
+                            )),
+                      )
+                    ],
+                  )
+              ),
+        ]
+
+         ),
+
        ),
 
       bottomNavigationBar: BottomNavigationBar(
