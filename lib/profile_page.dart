@@ -1,7 +1,14 @@
-import 'package:aufa_app/Dashboard.dart';
+/*import 'package:aufa_app/Dashboard.dart';
 import 'package:aufa_app/ProfilePage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+int _selectedPageIndex = 0;
+
+var _pages = [
+  Dashboard(),
+  ProfilePage(),
+];
 
 class ProfilePage extends StatelessWidget {
   @override
@@ -62,37 +69,30 @@ class ProfilePage extends StatelessWidget {
           ],
         ),
       ),
-    );
-    /*return Column(
-      children: <Widget>[
-        Stack(
-          alignment: Alignment.center,
-          children: <Widget>[
-            Image(
-              height: MediaQuery.of(context).size.height/3,
-              fit: BoxFit.cover,
-              image: NetworkImage(
-                  'https://images.pexels.com/photos/258109/pexels-photo-258109.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'),
-            ),
-            Positioned(
-                child: CircleAvatar(
-                  radius: 80,
-                  backgroundColor: Colors.white,
-                  backgroundImage: NetworkImage(''
-                      'https://qph.fs.quoracdn.net/main-qimg-2b21b9dd05c757fe30231fac65b504dd'),
-                ))
-          ],
-        ),
-        Container(
-          child: Text('Hello',
-            style: TextStyle(
-              fontSize: 25,
-              color: Colors.white,
-            ),
-
+      bottomNavigationBar: BottomNavigationBar (
+        backgroundColor: Colors.pinkAccent,
+        selectedFontSize: 20,
+        selectedIconTheme: IconThemeData(color: Colors.amberAccent),
+        selectedItemColor: Colors.amberAccent,
+        selectedLabelStyle: TextStyle(fontWeight: FontWeight.bold),
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.dashboard_outlined),
+            label: 'Dashboard',
           ),
-        )
-      ],
-    );*/
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person_outline),
+            label: 'Profile',
+          ),
+        ],
+        currentIndex: _selectedPageIndex,
+        onTap: (index) {
+          setState(() {
+            _selectedPageIndex = index;
+          });
+
+        },
+      ),
+    );
   }
-}
+}*/

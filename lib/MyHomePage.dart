@@ -77,10 +77,10 @@ int _currentIndex = 0;
                   color: Colors.deepOrange[400],
                   child: new Text("To-Do", style: TextStyle(fontSize: 20.0, color: Colors.white),),
                   onPressed: () => {
-                    Navigator.push(
+                    /*Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Dashboard()),
-                    )
+                    )*/
                   },
                   splashColor: Colors.redAccent,
                 )),
@@ -99,10 +99,10 @@ int _currentIndex = 0;
                               color: Colors.deepOrange[400],
                               child: new Text("Done", style: TextStyle(fontSize: 20.0, color: Colors.white),),
                               onPressed: () => {
-                                Navigator.push(
+                                /*Navigator.push(
                                   context,
                                   MaterialPageRoute(builder: (context) => ProfilePage()),
-                                )
+                                )*/
                               },
                             )),
                       )
@@ -114,6 +114,7 @@ int _currentIndex = 0;
          ),
 
        ),
+
 
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,

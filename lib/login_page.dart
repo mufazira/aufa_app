@@ -17,7 +17,6 @@ class InitState extends State<LoginPage>{
     return initWidget();
   }
 
-
   Widget initWidget() {
     return Scaffold(
       body: SingleChildScrollView(

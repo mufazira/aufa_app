@@ -1,5 +1,6 @@
 import 'package:aufa_app/Dashboard.dart';
 import 'package:aufa_app/ProfilePage.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 int _selectedPageIndex = 0;
@@ -28,66 +29,49 @@ class _ProfilePageState extends State<ProfilePage> {
         // The title text which will be shown on the action bar
         title: Text("PROFILE"),
       ),
-
-      body: new Container(
-        width: double.infinity,
-        height: double.infinity,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topRight,
-            end: Alignment.bottomRight,
-            colors: [Color(0xFFF56194), Color(0xFFF35353)],
-          ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            Stack(
+              alignment: Alignment.center,
+              children: <Widget>[
+                Image(
+                  height: MediaQuery.of(context).size.height/3,
+                  fit: BoxFit.cover,
+                  image: NetworkImage(
+                      'https://www.schemecolor.com/images/color-image-thumb.php?tx&w=600&h=316&hex=F06292'),
+                ),
+                Positioned(
+                    top: 30,
+                    child: CircleAvatar(
+                      radius: 60,
+                      backgroundColor: Colors.white,
+                      backgroundImage: NetworkImage(''
+                          'https://qph.fs.quoracdn.net/main-qimg-2b21b9dd05c757fe30231fac65b504dd'),
+                    )
+                ),
+                Positioned(
+                    top: 170,
+                    child: Text('Username',
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.black,
+                      ),
+                    )
+                ),
+                Positioned(
+                    top: 200,
+                    child: Text('ID Number',
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: Colors.black,
+                      ),
+                    )
+                ),
+              ],
+            ),
+          ],
         ),
-        child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Expanded(
-                flex:2,
-                child: Padding(
-                    padding: EdgeInsets.all(20.0),
-                    child: new MaterialButton(
-                      height: 50.0,
-                      minWidth: 150.0,
-                      color: Colors.deepOrange[400],
-                      child: new Text("To-Do", style: TextStyle(fontSize: 20.0, color: Colors.white),),
-                      onPressed: () => {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => Dashboard()),
-                        )
-                      },
-                      splashColor: Colors.redAccent,
-                    )),
-              ),
-              Expanded(
-                  flex:2,
-                  child: Row(
-                    children: <Widget>[
-                      Expanded(
-                        flex: 2,
-                        child: Padding(
-                            padding: EdgeInsets.all(20.0),
-                            child: new MaterialButton(
-                              height: 50.0,
-                              minWidth: 150.0,
-                              color: Colors.deepOrange[400],
-                              child: new Text("Done", style: TextStyle(fontSize: 20.0, color: Colors.white),),
-                              onPressed: () => {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(builder: (context) => ProfilePage()),
-                                )
-                              },
-                            )),
-                      )
-                    ],
-                  )
-              ),
-            ]
-
-        ),
-
       ),
 
       bottomNavigationBar: BottomNavigationBar (
