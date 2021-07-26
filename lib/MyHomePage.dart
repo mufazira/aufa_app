@@ -120,7 +120,7 @@ class InitState extends State<MyHomePage>{
               ),
             ]
         ),
-      ),*/
+      ), */
 
 
       bottomNavigationBar: BottomNavigationBar(
