@@ -42,17 +42,26 @@ int _currentIndex = 0;
 
   Widget initWidget() {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.pink[300],
-        actions: <Widget>[
-          new IconButton(
-              icon: new Icon(Icons.add_alert),
-              onPressed: ()=> debugPrint("notification")
+        appBar: AppBar(
+          backgroundColor: Colors.pink[300],
+            title: Text("AUFAs APP"),
+            leading: GestureDetector(
+              onTap: () => debugPrint("notification"),
+              child: Icon(Icons.add_alert,),  // add custom icons also
+            ),
+            actions: <Widget>[
+        Padding(
+        padding: EdgeInsets.only(right: 20.0),
+        child: GestureDetector(
+          onTap: () => debugPrint("setting"),
+          child: Icon(
+            Icons.settings,
+            size: 26.0,
           ),
-        ],
-        // The title text which will be shown on the action bar
-        title: Text("AUFAs APP"),
-      ),
+        )
+    ),
+            ],
+        ),
       body: /* _children[_currentIndex], */
        new Container(
         width: double.infinity,
@@ -77,10 +86,10 @@ int _currentIndex = 0;
                   color: Colors.deepOrange[400],
                   child: new Text("To-Do", style: TextStyle(fontSize: 20.0, color: Colors.white),),
                   onPressed: () => {
-                    /*Navigator.push(
+                    Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Dashboard()),
-                    )*/
+                    )
                   },
                   splashColor: Colors.redAccent,
                 )),
@@ -99,10 +108,10 @@ int _currentIndex = 0;
                               color: Colors.deepOrange[400],
                               child: new Text("Done", style: TextStyle(fontSize: 20.0, color: Colors.white),),
                               onPressed: () => {
-                                /*Navigator.push(
+                                Navigator.push(
                                   context,
                                   MaterialPageRoute(builder: (context) => ProfilePage()),
-                                )*/
+                                )
                               },
                             )),
                       )
@@ -110,9 +119,7 @@ int _currentIndex = 0;
                   )
               ),
         ]
-
          ),
-
        ),
 
 
