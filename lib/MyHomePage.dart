@@ -18,13 +18,13 @@ class InitState extends State<MyHomePage>{
     return initWidget();
   }
 
-void _onTabTapped(int index){
+  void _onTabTapped(int index){
     setState(() {
       _currentIndex = index;
     });
-}
-int _currentIndex = 0;
-  final List<Widget> _pages = <Widget>[
+  }
+  int _currentIndex = 0;
+  final List<Widget> _children = <Widget>[
     Icon(
       Icons.dashboard_outlined,
       size: 150,
@@ -42,28 +42,28 @@ int _currentIndex = 0;
 
   Widget initWidget() {
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.pink[300],
-            title: Text("AUFAs APP"),
-            leading: GestureDetector(
-              onTap: () => debugPrint("notification"),
-              child: Icon(Icons.add_alert,),  // add custom icons also
-            ),
-            actions: <Widget>[
-        Padding(
-        padding: EdgeInsets.only(right: 20.0),
-        child: GestureDetector(
-          onTap: () => debugPrint("setting"),
-          child: Icon(
-            Icons.settings,
-            size: 26.0,
-          ),
-        )
-    ),
-            ],
+      appBar: AppBar(
+        backgroundColor: Colors.pink[300],
+        title: Text("AUFAs APP"),
+        leading: GestureDetector(
+          onTap: () => debugPrint("notification"),
+          child: Icon(Icons.add_alert,),  // add custom icons also
         ),
-      body: /* _children[_currentIndex], */
-       new Container(
+        actions: <Widget>[
+          Padding(
+              padding: EdgeInsets.only(right: 20.0),
+              child: GestureDetector(
+                onTap: () => debugPrint("setting"),
+                child: Icon(
+                  Icons.settings,
+                  size: 26.0,
+                ),
+              )
+          ),
+        ],
+      ),
+      body:  _children[_currentIndex],
+       /*new Container(
         width: double.infinity,
         height: double.infinity,
         decoration: BoxDecoration(
@@ -73,27 +73,27 @@ int _currentIndex = 0;
             colors: [Color(0xFFF56194), Color(0xFFF35353)],
           ),
         ),
-          child: Row(
-           mainAxisAlignment: MainAxisAlignment.center,
+        child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-            Expanded(
-            flex:2,
-            child: Padding(
-                padding: EdgeInsets.all(20.0),
-                child: new MaterialButton(
-                  height: 50.0,
-                  minWidth: 150.0,
-                  color: Colors.deepOrange[400],
-                  child: new Text("To-Do", style: TextStyle(fontSize: 20.0, color: Colors.white),),
-                  onPressed: () => {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Dashboard()),
-                    )
-                  },
-                  splashColor: Colors.redAccent,
-                )),
-        ),
+              Expanded(
+                flex:2,
+                child: Padding(
+                    padding: EdgeInsets.all(20.0),
+                    child: new MaterialButton(
+                      height: 50.0,
+                      minWidth: 150.0,
+                      color: Colors.deepOrange[400],
+                      child: new Text("To-Do", style: TextStyle(fontSize: 20.0, color: Colors.white),),
+                      onPressed: () => {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Dashboard()),
+                        )
+                      },
+                      splashColor: Colors.redAccent,
+                    )),
+              ),
               Expanded(
                   flex:2,
                   child: Row(
@@ -118,9 +118,9 @@ int _currentIndex = 0;
                     ],
                   )
               ),
-        ]
-         ),
-       ),
+            ]
+        ),
+      ),*/
 
 
       bottomNavigationBar: BottomNavigationBar(
