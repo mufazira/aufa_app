@@ -25,16 +25,16 @@ class ProfilePage extends StatelessWidget {
         // The title text which will be shown on the action bar
         title: Text("AUFA's APP"),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: <Widget>[
-            Stack(
-              alignment: Alignment.center,
+      body: alignment.center,
               children: <Widget>[
                 Image(
                   height: MediaQuery.of(context).size.height/3,
                   fit: BoxFit.cover,
-                  image: NetworkImage(
+                  image: NetworkImagSingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            Stack(
+              alignment: Ale(
                       'https://www.schemecolor.com/images/color-image-thumb.php?tx&w=600&h=316&hex=F06292'),
                 ),
                 Positioned(

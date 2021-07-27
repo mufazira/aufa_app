@@ -1,5 +1,6 @@
 import 'package:aufa_app/Dashboard.dart';
 import 'package:aufa_app/ProfilePage.dart';
+import 'package:aufa_app/Todo.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:aufa_app/placeholder_widget.dart';
@@ -39,7 +40,6 @@ class InitState extends State<MyHomePage>{
   ];
 
 
-
   Widget initWidget() {
     return Scaffold(
       appBar: AppBar(
@@ -62,17 +62,68 @@ class InitState extends State<MyHomePage>{
           ),
         ],
       ),
-      body:  _children[_currentIndex],
-       /*new Container(
-        width: double.infinity,
-        height: double.infinity,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topRight,
-            end: Alignment.bottomRight,
-            colors: [Color(0xFFF56194), Color(0xFFF35353)],
-          ),
-        ),
+      body: /* _children[_currentIndex],*/
+      Column(
+        children: [
+      Container(
+
+      decoration: BoxDecoration(
+      gradient: LinearGradient(
+        begin: Alignment.topCenter,
+        end: Alignment.bottomCenter,
+        colors: [Color(0xFFF56194), Color(0xFFF35353)],
+      )
+    ),
+    child: Container(
+    width: double.infinity,
+    height: 350.0,
+    child: Center(
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+    CircleAvatar(
+    backgroundImage: NetworkImage(
+    'https://qph.fs.quoracdn.net/main-qimg-2b21b9dd05c757fe30231fac65b504dd',
+    ),
+    radius: 50.0,
+    ),
+    Positioned
+    (bottom: 1, right: 1 ,child: Container(
+    height: 40, width: 40,
+    child: Icon(Icons.add_a_photo, color: Colors.pinkAccent,),
+    decoration: BoxDecoration(
+    color: Colors.white,
+    borderRadius: BorderRadius.all(Radius.circular(20))
+    ),
+    )),
+
+    Positioned(
+    top: 170,
+    child: Text('Username',
+    style: TextStyle(
+    fontSize: 20,
+    color: Colors.black,
+    ),
+    )
+    ),
+    Positioned(
+    top: 200,
+    child: Text('ID Number',
+    style: TextStyle(
+    fontSize: 16,
+    color: Colors.black,
+    ),
+    )
+    ),
+    ],
+    ),
+    ),
+    )
+    ),
+    Container(
+    child: Padding(
+    padding: const EdgeInsets.symmetric(vertical: 30.0,horizontal: 16.0),
         child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
@@ -120,7 +171,24 @@ class InitState extends State<MyHomePage>{
               ),
             ]
         ),
-      ), */
+
+       ),
+            ),
+            ],
+      ),
+
+
+
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add, color: Colors.pinkAccent,),
+        /*decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.all(Radius.circular(20))
+        ),*/
+          onPressed: () => {/*_displayDialog(context)*/},
+          tooltip: 'Add Item',
+      ),
+
 
 
       bottomNavigationBar: BottomNavigationBar(
@@ -146,7 +214,6 @@ class InitState extends State<MyHomePage>{
     );
   }
 }
-
 
 
 
